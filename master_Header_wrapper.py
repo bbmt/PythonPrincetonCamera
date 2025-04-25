@@ -55,7 +55,7 @@ PV_FAIL = 0
 PV_OK = 1
 
 rs_bool = ctww.USHORT
-rs_bool_ptr = ctww.POINTER(rs_bool)
+rs_bool_ptr = ctw.POINTER(rs_bool)
 rs_bool_const_ptr = rs_bool_ptr
 char = ctw.c_char
 char_ptr = ctw.c_char_p
@@ -158,7 +158,23 @@ class ScriptLocation(Enum):
 class ExposureUnits(Enum):
     millisecond = 0
     microsecond = 1
-#    second = 2 # Not available for our camera
+    #second = 2 # Not available for our camera
+    
+class LogicOutput(Enum):
+    not_scan = 0
+    shutter = 1
+    not_rdy = 2
+    logic0 = 3
+    clearing = 4
+    not_ft_image_shift = 5 
+    reserved = 6
+    logic1 = 7
+    expose_prog = 8 
+    expose = 9
+    image_shift = 10
+    readout = 11
+    acquiring = 12
+    wait_for_trig = 13
     
 class BufferPrec(Enum):
     int8precision = 0
